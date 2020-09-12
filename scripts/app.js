@@ -120,10 +120,19 @@ let reverseString = string => {
 }
 console.log(reverseString('San Francisco'));
 
-//     Commit.
-
 // 4. Make your palindrome function from problem two above work regardless of spacing (or capitalization). So, for example, "Sit on a potato pan Otis" or "Bird rib" would pass the test.
 
+let allPalindrome = str => {
+    let myArray = str.toUpperCase().split('').filter(item => item.charCodeAt() > 64 && item.charCodeAt() < 91);
+    for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i] !== myArray[myArray.length - i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(allPalindrome("Sit on a potato pan Otis"));
+console.log(allPalindrome("Bird rib"));
 //     Commit.
 
 // 5. Make your palindrome function work even if the string contains punctuation.  So: "Sit on a potato pan, Otis!!!" or "A man, a plan, a canal: Panama." or "Cigar? Toss it in a can! It is so tragic." would pass the test.
