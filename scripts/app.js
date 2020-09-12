@@ -22,20 +22,12 @@ let checkPalindrome = str => {
 
 console.log(checkPalindrome("Radar"));
 
-// The commit message should read: <br>
-// "Commit 2 - Palindrome".
-// <hr>
-
 // ## 3. Digit Sum
 // Write a function `sumDigits` that accepts a number and returns the sum of its digits.
-// ```js
-// console.log(sumDigits(42));
-// => 6;
-// ```
 
-// <hr>
-// &#x1F534; **Commit your work.** <br>
-// The commit message should read: <br>
+let sumDigits = num => num.toString().split('').map(item => parseInt(item)).reduce((a,b) => a + b);
+console.log(sumDigits(42));
+
 // "Commit 3 - Digit Sum".
 // <hr>
 
