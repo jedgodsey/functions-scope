@@ -108,12 +108,17 @@ let insertDash = number => {
 console.log(insertDash(454793));
 console.log(insertDash(38568693009));
 
-// => 4547-9-3
-// ```
-
-//     Commit.
 
 // 3. Write a function `reverseString` that takes a string as a parameter and returns that string with the letters reversed **without using `.split()`, `.reverse()`, or `.join()`**.
+
+let reverseString = string => {
+    let backwards = '';
+    for (let i = string.length - 1; i >= 0; i--) {
+        backwards += string.substr(i,1);
+    }
+    return backwards;
+}
+console.log(reverseString('San Francisco'));
 
 //     Commit.
 
