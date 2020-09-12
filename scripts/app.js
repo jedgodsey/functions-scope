@@ -84,26 +84,29 @@ let printPrimes = limit => {
 }
 printPrimes(15);
 
-// "Commit 6 - Prime Numbers".
-// <hr>
-
-
-// ## CSS
-// Watch the following three videos on CSS:
-
-// - [First CSS video - 5 minutes](https://www.youtube.com/watch?v=xWiT2TWCFjc&index=3&list=PLdnONIhPScST0Vy4LrIZiYKpFNoxgyH7J)
-// - [Second CSS video - 11 minutes](https://www.youtube.com/watch?v=UMMHsQPmfug&index=4&list=PLdnONIhPScST0Vy4LrIZiYKpFNoxgyH7J)
-// - [Third CSS video - 17 minutes](https://www.youtube.com/watch?v=g0Aq2kP5-CY&index=5&list=PLdnONIhPScST0Vy4LrIZiYKpFNoxgyH7J)
-
-// You will need to have watched these videos for tomorrow's lab.
-
 // # Hungry for more?
 
 // 1. Complete the afternoon lab. 
 
 // 2. Write a function `insertDash` that accepts a number as a parameter and returns a string with a dash inserted between any consecutive **odd numbers**. There should not be a dash at the end, it goes only between numbers.
-// ```javascript
-// console.log(insertDash(454793));
+
+let insertDash = number => {
+    let numArray = number.toString().split('');
+    let dashArray = [];
+    for (let i = 0; i < numArray.length; i++) {
+        if (numArray[i] % 2 === 1) {
+            dashArray.push(numArray[i]);
+            if (numArray[i + 1] % 2 === 1) {
+                dashArray.push('-');
+            }
+        } else {
+            dashArray.push(numArray[i]);
+        }
+    }
+    return dashArray.join('');
+}
+console.log(insertDash(454793));
+console.log(insertDash(38568693009));
 
 // => 4547-9-3
 // ```
