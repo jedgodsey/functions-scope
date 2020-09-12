@@ -154,6 +154,27 @@ console.log(puncPalindrome("Cigar? Toss it in a can! It is so tragic."));
 
 // 6. Make a "word palindrome" function that returns true if the words in a phrase are the same backwards and forwards.  It should not care about spacing, capitalization, or punctuation.  For example the following string would pass the test: 
 
+let wordPalindrome = str => {
+    let myArray = str
+        .toUpperCase()
+        .split('')
+        .filter(item => 
+            (item.charCodeAt() > 64 && item.charCodeAt() < 91) || item.charCodeAt() === 32
+        )
+        .join('')
+        .split(' ');
+    console.log(myArray);
+    for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i] !== myArray[myArray.length - i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(wordPalindrome(`Son, I am able," she said. "Though you scare me, watch!" said I, "Beloved," I said, "watch me scare you!" Though, said she: "able am I, son.`));
+console.log(wordPalindrome('garbage test'));
+
+
 //     "Son, I am able," she said. "Though you scare me, watch!" said I, "Beloved," I said, "watch me scare you!" Though, said she: "able am I, son."
 
 //     Commit.
