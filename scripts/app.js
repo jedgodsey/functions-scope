@@ -37,26 +37,22 @@ console.log(sumDigits(42));
 
 let calculateSide = (sideA, sideB) => Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
 console.log(calculateSide(8, 6));
-// => 10
-// ```
-// <hr>
-// &#x1F534; **Commit your work.** <br>
-// The commit message should read: <br>
-// "Commit 4 - Pythagoras".
-// <hr>
 
 // ## 5. Sum Array
 // Write a function `sumArray` that takes an **array** as an argument.
 // The array should contain numbers. The function should return the sum of the numbers in the array. **Do not use `.reduce()`**.
 
-// Expected result:
-// ```javascript
-// console.log(sumArray([1, 2, 3, 4, 5, 6]));
-// => 21
-// ```
-// <hr>
-// &#x1F534; **Commit your work.** <br>
-// The commit message should read: <br>
+let sumArray = array => {
+    let total = 0;
+    for (let i = 0; i < array.length; i++) {
+        total += array[i];
+    }
+    return total;
+}
+
+
+console.log(sumArray([1, 2, 3, 4, 5, 6]));
+
 // "Commit 5 - Sum Array".
 // <hr>
 
