@@ -137,6 +137,19 @@ console.log(allPalindrome("Bird rib"));
 
 // 5. Make your palindrome function work even if the string contains punctuation.  So: "Sit on a potato pan, Otis!!!" or "A man, a plan, a canal: Panama." or "Cigar? Toss it in a can! It is so tragic." would pass the test.
 
+let puncPalindrome = str => {
+    let myArray = str.toUpperCase().split('').filter(item => item.charCodeAt() > 64 && item.charCodeAt() < 91);
+    for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i] !== myArray[myArray.length - i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(puncPalindrome("Sit on a potato pan, Otis!!!"));
+console.log(puncPalindrome("A man, a plan, a canal: Panama."));
+console.log(puncPalindrome("Cigar? Toss it in a can! It is so tragic."));
+
 //     Commit.
 
 // 6. Make a "word palindrome" function that returns true if the words in a phrase are the same backwards and forwards.  It should not care about spacing, capitalization, or punctuation.  For example the following string would pass the test: 
