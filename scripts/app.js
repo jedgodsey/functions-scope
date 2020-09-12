@@ -28,9 +28,6 @@ console.log(checkPalindrome("Radar"));
 let sumDigits = num => num.toString().split('').map(item => parseInt(item)).reduce((a,b) => a + b);
 console.log(sumDigits(42));
 
-// "Commit 3 - Digit Sum".
-// <hr>
-
 // ## 4. Pythagoras
 // Write a function `calculateSide` that takes two arguments: `sideA` and `sideB`, and returns the solution for sideC using the Pythagorean theorem.
 
@@ -38,9 +35,8 @@ console.log(sumDigits(42));
 
 // _hint:_ checkout the [Math methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) in javascript
 
-// **_restriction_**: for this problem, do NOT use `Math.hypot()` (but for the rest of time, once you've done this problem feel free)
-// ```js
-// console.log(calculateSide(8, 6));
+let calculateSide = (sideA, sideB) => Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
+console.log(calculateSide(8, 6));
 // => 10
 // ```
 // <hr>
